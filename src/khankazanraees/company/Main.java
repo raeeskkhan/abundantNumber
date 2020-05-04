@@ -8,14 +8,18 @@ public class Main {
 
     public static void main(String[] args) {
 
+//        A number n is said to be Abundant Number if sum of all the proper divisors of the number denoted by sum(n)
+//        is greater than the value of the number n. And the difference between these two values is called
+//        the abundance.
+
         //Add 0 as the first index
         divisors.add(0);
 
         //Input Number
-        int num = 21;
+        int inputNumber = 21;
         //Divide by 2 since a divisor cannot be greater than half the input number
-        int temp = Math.round(num / 2);
-        getDivisors(temp, num);
+        int halfInputNumber = Math.round(inputNumber / 2);
+        getDivisors(halfInputNumber, inputNumber);
 
         //Remove the first index
         divisors.remove(0);
@@ -23,7 +27,7 @@ public class Main {
         displayDivisors();
 
         //Is the number abundant?
-        isAbundant(num);
+        isAbundant(inputNumber);
 
     }
 
