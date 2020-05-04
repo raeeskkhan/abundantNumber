@@ -16,9 +16,9 @@ public class Main {
         divisors.add(0);
 
         //Input Number
-        int inputNumber = 21;
+        int inputNumber = 12;
         //Divide by 2 since a divisor cannot be greater than half the input number
-        int halfInputNumber = Math.round(inputNumber / 2);
+        int halfInputNumber = Math.round(Math.floorDiv(inputNumber, 2));
         getDivisors(halfInputNumber, inputNumber);
 
         //Remove the first index
@@ -44,16 +44,16 @@ public class Main {
 
     public static void displayDivisors() {
         System.out.print("Divisors: ");
-        for (int i = 0; i < divisors.size(); i++) {
-            System.out.print(divisors.get(i) + " ");
+        for (Integer divisor : divisors) {
+            System.out.print(divisor + " ");
         }
     }
 
     public static int addAllDivisors() {
         int totalSum = 0;
 
-        for (int i = 0; i < divisors.size(); i++) {
-            totalSum += divisors.get(i);
+        for (Integer divisor : divisors) {
+            totalSum += divisor;
         }
         System.out.println("\nTotal Sum: " + totalSum);
         return totalSum;
@@ -63,9 +63,9 @@ public class Main {
 
         int totalSum = addAllDivisors();
         if (totalSum > inputNumber) {
-            System.out.println(inputNumber + " is an Abundant Number");
+            System.out.println(inputNumber + " is an Abundant Number since " + inputNumber + " < " + totalSum);
         } else {
-            System.out.println(inputNumber + " is NOT an Abundant Number");
+            System.out.println(inputNumber + " is NOT an Abundant Number since " + inputNumber + " > " + totalSum);
         }
 
     }
